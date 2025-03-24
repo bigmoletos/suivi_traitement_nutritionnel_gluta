@@ -1,0 +1,30 @@
+name: suivi_traitement_nutritionnel_gluta
+description: Application de suivi santé pour régime à la L-glutamine
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  intl: ^0.18.1
+  pdf: ^3.10.7
+  path_provider: ^2.1.1
+  share_plus: ^7.2.1
+  provider: ^6.1.1
+  flutter_switch: ^0.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
