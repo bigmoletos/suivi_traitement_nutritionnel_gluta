@@ -23,8 +23,8 @@ class ExportService {
           ),
           pw.SizedBox(height: 20),
           ...suivis.map((suivi) => pw.Container(
-            margin: pw.EdgeInsets.only(bottom: 20),
-            padding: pw.EdgeInsets.all(10),
+                margin: const pw.EdgeInsets.only(bottom: 20),
+                padding: const pw.EdgeInsets.all(10),
             decoration: pw.BoxDecoration(
               border: pw.Border.all(),
             ),

@@ -1,5 +1,5 @@
 name: suivi_traitement_nutritionnel_gluta
-description: Application de suivi santé pour régime à la L-glutamine
+description: Application de suivi de traitement nutritionnel
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -18,6 +18,11 @@ dependencies:
   share_plus: ^7.2.1
   provider: ^6.1.1
   flutter_switch: ^0.3.2
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.17.9
+  cloud_firestore: ^4.15.9
+  firebase_messaging: ^14.7.20
+  flutter_local_notifications: ^16.3.2
 
 dev_dependencies:
   flutter_test:
