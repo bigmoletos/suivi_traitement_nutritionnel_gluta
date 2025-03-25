@@ -5,9 +5,8 @@ import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 import 'pages/verify_page.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -22,9 +21,32 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      home: FutureBuilder(
+        future: Firebase.initializeApp(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Scaffold(
+              body: Center(
+                child: Text(
+                  'Erreur lors de l\'initialisation de Firebase',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+            );
+          }
+
+          if (snapshot.connectionState == ConnectionState.done) {
+            return const HomePage();
+          }
+
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        },
+      ),
       routes: {
-        '/': (context) => const HomePage(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/verify': (context) => const VerifyPage(),
